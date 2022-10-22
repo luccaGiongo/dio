@@ -4,6 +4,8 @@ import { ButtonContainer } from './Button.styles'
 // variant, senão receber nada, vai ser "primary"
 export const Button = ({ title, variant = "primary", onClick }) => {
     return (
-        <ButtonContainer variant={variant} onClick={onClick}>{title}</ButtonContainer>
+        <ButtonContainer variant={variant} onClick={onClick}>
+            {title}
+        </ButtonContainer>
     );
 }
