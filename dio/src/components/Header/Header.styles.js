@@ -8,13 +8,11 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    background-color: blue;
 `;
 
 export const Row = styled.div`
     display: flex;
     align-items: center;
-    background-color: red;
 `;
 
 export const Column = styled.div`
@@ -47,7 +45,7 @@ export const BuscarInputContainer = styled.div`
 export const Menu = styled.a`
     font-family: 'Open Sans';
     font-style: normal;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 25px;
     color: #FFF;
     margin-right: 12px;
@@ -64,7 +62,7 @@ export const MenuRight = styled.a`
     text-decoration: none;
 `;
 
-export const UserPicture = styled.a`
+export const UserPicture = styled.img`
     width: 32px;
     height: 32px;
     border-radius: 22px;
@@ -76,4 +74,5 @@ export const Input = styled.input`
     flex: 1;
     border: 0;
     color: #FFF;
+    outline: 0;
 `;

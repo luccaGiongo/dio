@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo-dio.png'
 
 import {
@@ -14,22 +15,32 @@ import {
 
 import { Button } from '../Button/Button'
 
-export const Header = () => {
+export const Header = ({ autenticado }) => {
     return (
         <Wrapper>
             <Container>
                 <Row>
                     <img src={logo} alt="Logo da Dio" />
-                    <BuscarInputContainer>
-                        <Input placeholder='Buscar...'></Input>
-                    </BuscarInputContainer>
-                    <Menu>Live Code</Menu>
-                    <Menu>Global</Menu>
+                    {autenticado ? (
+                        <>
+                            <BuscarInputContainer>
+                                <Input placeholder='Buscar...'></Input>
+                            </BuscarInputContainer>
+                            <Menu>Live Code</Menu>
+                            <Menu>Global</Menu>
+                        </>
+                    ) : null}
                 </Row>
                 <Row>
-                    <MenuRight href='#'>Home</MenuRight>
-                    <Button title="Entrar"></Button>
-                    <Button title="Cadastrar"></Button>
+                    {autenticado ? (
+                        <UserPicture src="https://avatars.githubusercontent.com/u/49788942?s=400&u=12c0530b89c5fd4bed42db07ff729eb40aab06b5&v=4"></UserPicture>
+                    ) : (
+                        <>
+                            <MenuRight href='#'>Home</MenuRight>
+                            <Button title="Cadastrar"></Button>
+                            <Button title="Entrar"></Button>
+                        </>
+                    )}
                 </Row>
             </Container>
         </Wrapper>

@@ -8,6 +8,8 @@ export const ButtonContainer = styled.button`
     padding: 2px 12px;
     min-width: 120px;
     width: 100%;
+    cursor: pointer;
+    font-family: 'Open Sans';
 
 /* Pegar as Props */
 /* Maneira convencional  */
@@ -18,9 +20,15 @@ export const ButtonContainer = styled.button`
         background: #E4105D;
         min-width: 167px;
         height: 33px;
+        cursor: pointer;
+        font-family: 'Open Sans';
+
+        &:hover{
+            opacity: 0.6;
+        }
 
         &::after{
-            content: '',
+            content: '';
             position: absolute;
             border: 1px solid #E4105D;
             top: -5px;
