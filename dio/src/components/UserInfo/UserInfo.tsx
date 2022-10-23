@@ -1,3 +1,4 @@
+import { IUserInfo } from './types';
 import {
     Container,
     UserPicture,
@@ -5,7 +6,7 @@ import {
     Progress
 } from './UserInfo.styles';
 
-export const UserInfo = ({ name, image, percentual }) => {
+export const UserInfo = ({ name, image, percentual }: IUserInfo) => {
     return (
         <Container>
             <UserPicture src={image}></UserPicture>

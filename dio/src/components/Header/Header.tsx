@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo-dio.png'
+import logo from '../../assets/logo-dio.png';
 
 import {
     BuscarInputContainer,
@@ -14,8 +14,9 @@ import {
 } from './Header.styles';
 
 import { Button } from '../Button/Button'
+import { IHeader } from './types';
 
-export const Header = ({ autenticado }) => {
+export const Header = ({ autenticado }: IHeader) => {
     return (
         <Wrapper>
             <Container>

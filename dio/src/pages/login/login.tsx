@@ -21,6 +21,7 @@ import {
 import { Button } from '../../components/Button/Button';
 import { Header } from '../../components/Header/Header';
 import { Input } from '../../components/Input/Input';
+import { IFormData } from './types';
 
 
 export const Login = () => {
@@ -30,12 +31,11 @@ export const Login = () => {
         password: yup.string().min(3, 'No minimo 3 caracteres!').required('Campo Obrigatório'),
     }).required();
 
-    const { control, handleSubmit, formState: { errors, isValid } } = useForm(
+    const { control, handleSubmit, formState: { errors, isValid } } = useForm<IFormData>(
         {
             resolver: yupResolver(schema),
             mode: 'onChange'
         });
-    const onSubmit = data => console.log(data);
 
     const navigate = useNavigate();
     const handleClickSignin = () => {
@@ -56,10 +56,10 @@ export const Login = () => {
                     <Wrapper>
                         <TitleLogin>Faça seu cadastro</TitleLogin>
                         <SubTitleLogin>Faça seu login e make the change._</SubTitleLogin>
-                        <form onSubmit={handleSubmit(onSubmit)} >
+                        <form>
                             <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="email" leftIcon={<EmailIcon></EmailIcon>} ></Input>
                             <Input name="password" errorMessage={errors?.password?.message} control={control} placeholder="senha" type="password" leftIcon={<NoEncryptionIcon></NoEncryptionIcon>} ></Input>
-                            <Button title="Entrar" variant="secondary" type="submit"></Button>
+                            <Button title="Entrar" variant="secondary"></Button>
                         </form>
                         <Row>
                             <EsqueciText>Esqueci minha senha</EsqueciText>
