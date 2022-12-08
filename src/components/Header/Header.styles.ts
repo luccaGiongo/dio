@@ -13,6 +13,10 @@ export const Container = styled.div`
 export const Row = styled.div`
     display: flex;
     align-items: center;
+
+    img{
+        cursor: pointer;
+    }
 `;
 
 export const Column = styled.div`

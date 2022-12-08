@@ -2,15 +2,12 @@
 import { Home } from './pages/home/home'
 import { Login } from './pages/login/login'
 import { Feed } from './pages/feed/feed'
-
-//Imports Components
-import { Header } from './components/Header/Header'
+import { Cadastro } from './pages/cadastro/cadastro'
 
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from 'react-router-dom'
 
 function App() {
@@ -19,8 +16,9 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home></Home>} ></Route>
-          <Route path='/login/login.jsx' element={<Login></Login>} ></Route>
-          <Route path='/feed/feed.jsx' element={<Feed></Feed>} ></Route>
+          <Route path='/login/login.tsx' element={<Login></Login>} ></Route>
+          <Route path='/feed/feed.tsx' element={<Feed></Feed>} ></Route>
+          <Route path='/cadastro/cadastro.tsx' element={<Cadastro></Cadastro>} ></Route>
         </Routes>
       </Router>
     </>

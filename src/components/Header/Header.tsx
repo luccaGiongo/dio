@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import logo from '../../assets/logo-dio.png';
 
 import {
@@ -17,11 +17,25 @@ import { Button } from '../Button/Button'
 import { IHeader } from './types';
 
 export const Header = ({ autenticado }: IHeader) => {
+
+    const navigate = useNavigate();
+    const handleClickCadastro = () => {
+        navigate('/cadastro/cadastro.tsx')
+    }
+
+    const handleClickLogin = () => {
+        navigate('/login/login.tsx')
+    }
+
+    const handleClickHome = () => {
+        navigate('/')
+    }
+
     return (
         <Wrapper>
             <Container>
                 <Row>
-                    <img src={logo} alt="Logo da Dio" />
+                    <img src={logo} alt="Logo da Dio" onClick={handleClickHome} />
                     {autenticado ? (
                         <>
                             <BuscarInputContainer>
@@ -38,8 +52,8 @@ export const Header = ({ autenticado }: IHeader) => {
                     ) : (
                         <>
                             <MenuRight href='#'>Home</MenuRight>
-                            <Button title="Cadastrar"></Button>
-                            <Button title="Entrar"></Button>
+                            <Button title="Cadastrar" onClick={handleClickCadastro}></Button>
+                            <Button title="Entrar" onClick={handleClickLogin}></Button>
                         </>
                     )}
                 </Row>

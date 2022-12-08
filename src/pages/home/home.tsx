@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
 import banner from '../../assets/banner.png'
-import logo from '../../assets/logo-dio.png'
 
 import {
     Container,
@@ -17,7 +16,7 @@ export const Home = () => {
 
     const navigate = useNavigate();
     const handleClickSignin = () => {
-        navigate('/login/login.jsx')
+        navigate('/login/login.tsx')
     }
 
     return (
